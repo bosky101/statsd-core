@@ -23,15 +23,14 @@ run tar -xvzf v0.6.0.tar.gz
 run cd statsd-0.6.0
 add ./config.js /data/config.js
 
-run cd statsd-0.6.0
 run ls
 run cat /data/config.js
 
 EXPOSE 8125
 
-ENTRYPOINT ["/statsd-0.6.0"]
+#ENTRYPOINT ["/statsd-0.6.0"]
 
-CMD ["node", "stats.js", "/data/config.js"]
+CMD ["node", "/statsd-0.6.0/stats.js", "/data/config.js"]
 
 
 
