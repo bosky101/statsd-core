@@ -15,7 +15,7 @@ run sed -Ei 's/adm:x:4:/admin:x:4:admin/' /etc/group
 run sed -Ei 's/(\%admin ALL=\(ALL\) )ALL/\1 NOPASSWD:ALL/' /etc/sudoers
 
 # get git
-run apt-get install -q -y git libssl-dev curl
+run apt-get install -q -y git libssl-dev
 
 run git clone git@github.com:etsy/statsd.git
 run cd statsd
