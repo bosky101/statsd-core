@@ -1,4 +1,5 @@
-FROM base
+FROM ubuntu:12.04
+
 MAINTAINER Bhasker Kode "bosky101@gmail.com"
 
 # Make dpkg happy with the upstart issue
@@ -17,7 +18,7 @@ run sed -Ei 's/(\%admin ALL=\(ALL\) )ALL/\1 NOPASSWD:ALL/' /etc/sudoers
 # get git
 run apt-get install -q -y wget libssl-dev #git
 
-run wget https://github.com/etsy/statsd/archive/v0.6.0.tar.gz
+run wget https://github.com/etsy/statsd/archive/v0.6.0.tar.gz --no-check-certificate
 run tar -xvzf v0.6.0.tar.gz statsd
 
 #run git clone git@github.com:etsy/statsd.git
