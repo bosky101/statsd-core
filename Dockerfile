@@ -16,10 +16,10 @@ run mkdir /data /var/run/sshd
 run apt-get install -q -y wget libssl-dev #git
 
 run wget https://github.com/etsy/statsd/archive/v0.6.0.tar.gz --no-check-certificate
-run tar -xvzf v0.6.0.tar.gz statsd
+run tar -xvzf v0.6.0.tar.gz
 
 #run git clone git@github.com:etsy/statsd.git
-run cd statsd
+run cd statsd-0.6.0
 add config.js config.js
 
 run cd stats
@@ -28,7 +28,7 @@ run cat config.js
 
 EXPOSE 8125
 
-ENTRYPOINT ["/statsd"]
+ENTRYPOINT ["/statsd-0.6.0"]
 
 CMD ["node", "stat.js", "config.js"]
 
