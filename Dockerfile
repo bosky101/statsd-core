@@ -21,7 +21,7 @@ run tar -xvzf v0.6.0.tar.gz
 
 #run git clone git@github.com:etsy/statsd.git
 run cd statsd-0.6.0
-add config.js /data/config.js
+add ./config.js /data/config.js
 
 run cd statsd-0.6.0
 run ls
