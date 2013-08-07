@@ -22,8 +22,8 @@ run tar -xvzf v0.6.0.tar.gz
 run cd statsd-0.6.0
 add config.js config.js
 
-run cd stats
-run cd ls
+run cd statsd-0.6.0
+run ls
 run cat config.js
 
 EXPOSE 8125
