@@ -1,36 +1,49 @@
 # docker-statsd
 
+## Setup
+
+Create a config.js file locally ( see the .js file in this repo as an example )
+
+## Pull the image
+
+### From the Docker index
+	
+	docker pull bosky101/docker-statsd
+
+### From github
+
+	docker build github.com/bosky101/docker-statsd
+
+## Run statsd
+
 Sets up a container with statsd installed listening on port 8125. 
 
 The port, graphiteHost, graphitePort are configurable.
 
-## Usage
+To test the container, run as follows
 
-To run the container, do the following:
+	docker run -i -t bosky101/docker-statsd node /statsd-0.6.0/stats.js /data/config.js
 
-```
-docker run -d bosky101/statsd {graphitePort: 49238, graphiteHost:"localhost", port:50000}
-docker ps
-ID                  IMAGE                     COMMAND                CREATED
-STATUS              PORTS
-```
+To run statsd within the container in daemon mode
 
+	docker run -d -t bosky101/docker-statsd forever start /statsd-0.6.0/stats.js /data/config.js
+	
 Your statsd instance is now available
 
-## Building
+## To use as a base within your own docker image
 
-To build the image, simply invoke
+First pull the image, then use it as a base.
 
-```
-docker build github.com/bosky101/docker-statsd
-```
+	docker build github.com/bosky101/docker-statsd
 
-A prebuilt container is also available in the docker index
+Verify that the image exists
 
-```
-docker pull bosky101/statsd
-```
+	docker images
 
+Place it as a base within your dockfile
+
+	FROM bosky101/docker-statsd	
+	
 
 
 ## Author
