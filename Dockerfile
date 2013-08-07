@@ -11,6 +11,7 @@ RUN apt-get update
 
 # Set ssh superuser (username: admin   password: admin)
 run mkdir /data /var/run/sshd
+cd /data
 
 # get git
 run apt-get install -q -y wget libssl-dev #git
@@ -20,17 +21,17 @@ run tar -xvzf v0.6.0.tar.gz
 
 #run git clone git@github.com:etsy/statsd.git
 run cd statsd-0.6.0
-add config.js config.js
+add config.js /data/config.js
 
 run cd statsd-0.6.0
 run ls
-run cat config.js
+run cat /data/config.js
 
 EXPOSE 8125
 
 ENTRYPOINT ["/statsd-0.6.0"]
 
-CMD ["node", "stat.js", "config.js"]
+CMD ["node", "stats.js", "/data/config.js"]
 
 
 
