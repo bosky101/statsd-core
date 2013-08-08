@@ -27,7 +27,9 @@ To test the container, run as follows
 
 To run statsd within the container in daemon mode
 
-	docker run -d -t bosky101/docker-statsd:latest forever start /statsd-0.6.0/stats.js /data/config.js
+	docker run -d -t bosky101/docker-statsd:latest node /statsd-0.6.0/stats.js /data/config.js
+
+Note: The image also comes with forever, but it has not been tested
 	
 ### Step3: Check if it's running
 

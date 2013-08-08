@@ -19,3 +19,5 @@ EXPOSE 8125/udp 8126
 
 RUN cat /data/config.js
 RUN cat /data/docker-statsd-README.md
+
+CMD ["node","/statsd-0.6.0/stats.js", "/data/config.js"]

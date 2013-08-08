@@ -9,4 +9,4 @@ To test the container, run:
 
 To run statsd within the container in daemon mode, run:
 
-        docker run -d -t bosky101/docker-statsd:latest forever start /statsd-0.6.0/stats.js /data/config.js
+        docker run -d -t bosky101/docker-statsd:latest node /statsd-0.6.0/stats.js /data/config.js
