@@ -34,7 +34,7 @@ Note: The image also comes with forever, but it has not been tested
 ### Step3: Check if it's running
 
 	docker images # should show the docker-stats image
-	docker ps # should show the image with PORTS XYZ->8125/udp, 8126
+	docker ps # should show the image with PORTS 8125/udp, 8126
 	
 	#test
 	echo "stats" | nc $HOSTNAME 8126
