@@ -10,7 +10,7 @@ There are three ways of getting up the image. Once setup they statsd can be run.
 
 ### From github ( cannot configure ports )
 
-	docker build github.com/bosky101/docker-statsd
+	docker build -t bosky101/docker-statsd github.com/bosky101/docker-statsd
 
 ### From Dockerfile (can configure ports,etc )
 
