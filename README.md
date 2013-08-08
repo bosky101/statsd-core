@@ -32,9 +32,10 @@ To run statsd within the container in daemon mode
 ### Step3: Check if it's running
 
 	docker images # should show the docker-stats image
-	docker ps # should show the image with PORTS XYZ->8125/udp
+	docker ps # should show the image with PORTS XYZ->8125/udp, 8126
 	
 	#test
+	echo "stats" | nc $HOSTNAME 8126
 	
 
 Your statsd instance is now available

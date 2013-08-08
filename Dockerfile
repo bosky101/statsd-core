@@ -16,6 +16,7 @@ ADD config.js /data/config.js
 ADD Done.md /data/docker-statsd-README.md
 
 EXPOSE 8125/udp
+EXPOSE 8126
 
 RUN cat /data/config.js
 RUN cat /data/docker-statsd-README.md
