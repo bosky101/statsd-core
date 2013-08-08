@@ -23,11 +23,11 @@ There are three ways of getting up the image. Once setup they statsd can be run.
 
 To test the container, run as follows
 
-	docker run -i -t bosky101/docker-statsd node /statsd-0.6.0/stats.js /data/config.js
+	docker run -i -t bosky101/docker-statsd:latest node /statsd-0.6.0/stats.js /data/config.js
 
 To run statsd within the container in daemon mode
 
-	docker run -d -t bosky101/docker-statsd forever start /statsd-0.6.0/stats.js /data/config.js
+	docker run -d -t bosky101/docker-statsd:latest forever start /statsd-0.6.0/stats.js /data/config.js
 	
 Your statsd instance is now available
 
