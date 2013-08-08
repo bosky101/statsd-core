@@ -1,0 +1,526 @@
+[] dev@~/$ docker build -t bosky101/docker-statsd github.com/bosky101/docker-statsd
+Step 1 : FROM shykes/nodejs:latest
+ ---> 6592508b0790
+Step 2 : MAINTAINER Bhasker Kode "bosky101@gmail.com"
+ ---> Running in 3b46c45a5e68
+ ---> b9380ef75a14
+Step 3 : RUN mkdir /data /var/run/sshd
+ ---> Running in 7348e59a5d90
+ ---> a8ce3d325f3a
+Step 4 : RUN apt-get install -q -y wget libssl-dev
+ ---> Running in e8e3bcd1a325
+Reading package lists...
+Building dependency tree...
+Reading state information...
+wget is already the newest version.
+The following extra packages will be installed:
+  binutils cpp cpp-4.7 gcc gcc-4.7 libc-dev-bin libc6-dev libgmp10 libgomp1
+  libitm1 libmpc2 libmpfr4 libquadmath0 libssl-doc linux-libc-dev manpages
+  manpages-dev zlib1g-dev
+Suggested packages:
+  binutils-doc cpp-doc gcc-4.7-locales gcc-multilib make autoconf automake1.9
+  libtool flex bison gdb gcc-doc gcc-4.7-multilib libmudflap0-4.7-dev
+  gcc-4.7-doc libgcc1-dbg libgomp1-dbg libitm1-dbg libquadmath0-dbg
+  libmudflap0-dbg binutils-gold glibc-doc man-browser
+The following NEW packages will be installed:
+  binutils cpp cpp-4.7 gcc gcc-4.7 libc-dev-bin libc6-dev libgmp10 libgomp1
+  libitm1 libmpc2 libmpfr4 libquadmath0 libssl-dev libssl-doc linux-libc-dev
+  manpages manpages-dev zlib1g-dev
+0 upgraded, 19 newly installed, 0 to remove and 0 not upgraded.
+Need to get 26.0 MB of archives.
+After this operation, 67.6 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ quantal/main libgmp10 amd64 2:5.0.2+dfsg-2ubuntu2 [241 kB]
+Get:2 http://archive.ubuntu.com/ubuntu/ quantal/main libgomp1 amd64 4.7.2-2ubuntu1 [27.2 kB]
+Get:3 http://archive.ubuntu.com/ubuntu/ quantal/main libitm1 amd64 4.7.2-2ubuntu1 [36.2 kB]
+Get:4 http://archive.ubuntu.com/ubuntu/ quantal/main libmpfr4 amd64 3.1.0-3ubuntu3 [202 kB]
+Get:5 http://archive.ubuntu.com/ubuntu/ quantal/main libquadmath0 amd64 4.7.2-2ubuntu1 [125 kB]
+Get:6 http://archive.ubuntu.com/ubuntu/ quantal/main libmpc2 amd64 0.9-4build1 [39.8 kB]
+Get:7 http://archive.ubuntu.com/ubuntu/ quantal/main manpages all 3.40-0.1ubuntu3 [587 kB]
+Get:8 http://archive.ubuntu.com/ubuntu/ quantal/main binutils amd64 2.22.90.20120924-0ubuntu2 [2395 kB]
+Get:9 http://archive.ubuntu.com/ubuntu/ quantal/main cpp-4.7 amd64 4.7.2-2ubuntu1 [5408 kB]
+Get:10 http://archive.ubuntu.com/ubuntu/ quantal/main cpp amd64 4:4.7.2-1ubuntu2 [27.6 kB]
+Get:11 http://archive.ubuntu.com/ubuntu/ quantal/main gcc-4.7 amd64 4.7.2-2ubuntu1 [8524 kB]
+Get:12 http://archive.ubuntu.com/ubuntu/ quantal/main gcc amd64 4:4.7.2-1ubuntu2 [5120 B]
+Get:13 http://archive.ubuntu.com/ubuntu/ quantal/main libc-dev-bin amd64 2.15-0ubuntu20 [84.5 kB]
+Get:14 http://archive.ubuntu.com/ubuntu/ quantal/main linux-libc-dev amd64 3.5.0-17.28 [880 kB]
+Get:15 http://archive.ubuntu.com/ubuntu/ quantal/main libc6-dev amd64 2.15-0ubuntu20 [2947 kB]
+Get:16 http://archive.ubuntu.com/ubuntu/ quantal/main zlib1g-dev amd64 1:1.2.7.dfsg-13 [178 kB]
+Get:17 http://archive.ubuntu.com/ubuntu/ quantal/main libssl-dev amd64 1.0.1c-3ubuntu2 [1527 kB]
+Get:18 http://archive.ubuntu.com/ubuntu/ quantal/main libssl-doc all 1.0.1c-3ubuntu2 [1034 kB]
+Get:19 http://archive.ubuntu.com/ubuntu/ quantal/main manpages-dev all 3.40-0.1ubuntu3 [1710 kB]
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (@INC contains: /etc/perl /usr/local/lib/perl/5.14.2 /usr/local/share/perl/5.14.2 /usr/lib/perl5 /usr/share/perl5 /usr/lib/perl/5.14 /usr/share/perl/5.14 /usr/local/lib/site_perl .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7, <> line 19.)
+debconf: falling back to frontend: Teletype
+Fetched 26.0 MB in 11s (2220 kB/s)
+Selecting previously unselected package libgmp10:amd64.
+(Reading database ... 9914 files and directories currently installed.)
+Unpacking libgmp10:amd64 (from .../libgmp10_2%3a5.0.2+dfsg-2ubuntu2_amd64.deb) ...
+Selecting previously unselected package libgomp1:amd64.
+Unpacking libgomp1:amd64 (from .../libgomp1_4.7.2-2ubuntu1_amd64.deb) ...
+Selecting previously unselected package libitm1:amd64.
+Unpacking libitm1:amd64 (from .../libitm1_4.7.2-2ubuntu1_amd64.deb) ...
+Selecting previously unselected package libmpfr4:amd64.
+Unpacking libmpfr4:amd64 (from .../libmpfr4_3.1.0-3ubuntu3_amd64.deb) ...
+Selecting previously unselected package libquadmath0:amd64.
+Unpacking libquadmath0:amd64 (from .../libquadmath0_4.7.2-2ubuntu1_amd64.deb) ...
+Selecting previously unselected package libmpc2:amd64.
+Unpacking libmpc2:amd64 (from .../libmpc2_0.9-4build1_amd64.deb) ...
+Selecting previously unselected package manpages.
+Unpacking manpages (from .../manpages_3.40-0.1ubuntu3_all.deb) ...
+Selecting previously unselected package binutils.
+Unpacking binutils (from .../binutils_2.22.90.20120924-0ubuntu2_amd64.deb) ...
+Selecting previously unselected package cpp-4.7.
+Unpacking cpp-4.7 (from .../cpp-4.7_4.7.2-2ubuntu1_amd64.deb) ...
+Selecting previously unselected package cpp.
+Unpacking cpp (from .../cpp_4%3a4.7.2-1ubuntu2_amd64.deb) ...
+Selecting previously unselected package gcc-4.7.
+Unpacking gcc-4.7 (from .../gcc-4.7_4.7.2-2ubuntu1_amd64.deb) ...
+Selecting previously unselected package gcc.
+Unpacking gcc (from .../gcc_4%3a4.7.2-1ubuntu2_amd64.deb) ...
+Selecting previously unselected package libc-dev-bin.
+Unpacking libc-dev-bin (from .../libc-dev-bin_2.15-0ubuntu20_amd64.deb) ...
+Selecting previously unselected package linux-libc-dev:amd64.
+Unpacking linux-libc-dev:amd64 (from .../linux-libc-dev_3.5.0-17.28_amd64.deb) ...
+Selecting previously unselected package libc6-dev:amd64.
+Unpacking libc6-dev:amd64 (from .../libc6-dev_2.15-0ubuntu20_amd64.deb) ...
+Selecting previously unselected package zlib1g-dev:amd64.
+Unpacking zlib1g-dev:amd64 (from .../zlib1g-dev_1%3a1.2.7.dfsg-13_amd64.deb) ...
+Selecting previously unselected package libssl-dev.
+Unpacking libssl-dev (from .../libssl-dev_1.0.1c-3ubuntu2_amd64.deb) ...
+Selecting previously unselected package libssl-doc.
+Unpacking libssl-doc (from .../libssl-doc_1.0.1c-3ubuntu2_all.deb) ...
+Selecting previously unselected package manpages-dev.
+Unpacking manpages-dev (from .../manpages-dev_3.40-0.1ubuntu3_all.deb) ...
+Setting up libgmp10:amd64 (2:5.0.2+dfsg-2ubuntu2) ...
+Setting up libgomp1:amd64 (4.7.2-2ubuntu1) ...
+Setting up libitm1:amd64 (4.7.2-2ubuntu1) ...
+Setting up libmpfr4:amd64 (3.1.0-3ubuntu3) ...
+Setting up libquadmath0:amd64 (4.7.2-2ubuntu1) ...
+Setting up libmpc2:amd64 (0.9-4build1) ...
+Setting up manpages (3.40-0.1ubuntu3) ...
+Setting up binutils (2.22.90.20120924-0ubuntu2) ...
+Setting up cpp-4.7 (4.7.2-2ubuntu1) ...
+Setting up cpp (4:4.7.2-1ubuntu2) ...
+Setting up gcc-4.7 (4.7.2-2ubuntu1) ...
+Setting up gcc (4:4.7.2-1ubuntu2) ...
+Setting up libc-dev-bin (2.15-0ubuntu20) ...
+Setting up linux-libc-dev:amd64 (3.5.0-17.28) ...
+Setting up libc6-dev:amd64 (2.15-0ubuntu20) ...
+Setting up zlib1g-dev:amd64 (1:1.2.7.dfsg-13) ...
+Setting up libssl-dev (1.0.1c-3ubuntu2) ...
+Setting up libssl-doc (1.0.1c-3ubuntu2) ...
+Setting up manpages-dev (3.40-0.1ubuntu3) ...
+Processing triggers for libc-bin ...
+ldconfig deferred processing now taking place
+ ---> 9c75513fe277
+Step 5 : RUN wget https://github.com/etsy/statsd/archive/v0.6.0.tar.gz --no-check-certificate
+ ---> Running in 1767eb385ddf
+--2013-08-08 06:48:12--  https://github.com/etsy/statsd/archive/v0.6.0.tar.gz
+Resolving github.com (github.com)... 204.232.175.90
+Connecting to github.com (github.com)|204.232.175.90|:443... connected.
+WARNING: cannot verify github.com's certificate, issued by `/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert High Assurance EV CA-1':
+  Unable to locally verify the issuer's authority.
+HTTP request sent, awaiting response... 302 Found
+Location: https://codeload.github.com/etsy/statsd/tar.gz/v0.6.0 [following]
+--2013-08-08 06:48:13--  https://codeload.github.com/etsy/statsd/tar.gz/v0.6.0
+Resolving codeload.github.com (codeload.github.com)... 192.30.252.147
+Connecting to codeload.github.com (codeload.github.com)|192.30.252.147|:443... connected.
+WARNING: cannot verify codeload.github.com's certificate, issued by `/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert High Assurance CA-3':
+  Unable to locally verify the issuer's authority.
+HTTP request sent, awaiting response... 200 OK
+Length: 43519 (42K) [application/x-gzip]
+Saving to: `v0.6.0.tar.gz'
+
+     0K .......... .......... .......... .......... ..        100%  674K=0.06s
+
+2013-08-08 06:48:13 (674 KB/s) - `v0.6.0.tar.gz' saved [43519/43519]
+
+ ---> e7e25a0d2242
+Step 6 : RUN tar -xvzf v0.6.0.tar.gz
+ ---> Running in 45d472859d89
+statsd-0.6.0/
+statsd-0.6.0/.gitignore
+statsd-0.6.0/.travis.yml
+statsd-0.6.0/Changelog.md
+statsd-0.6.0/LICENSE
+statsd-0.6.0/README.md
+statsd-0.6.0/backends/
+statsd-0.6.0/backends/console.js
+statsd-0.6.0/backends/graphite.js
+statsd-0.6.0/backends/repeater.js
+statsd-0.6.0/bin/
+statsd-0.6.0/bin/statsd
+statsd-0.6.0/debian/
+statsd-0.6.0/debian/changelog
+statsd-0.6.0/debian/compat
+statsd-0.6.0/debian/control
+statsd-0.6.0/debian/copyright
+statsd-0.6.0/debian/dirs
+statsd-0.6.0/debian/docs
+statsd-0.6.0/debian/localConfig.js
+statsd-0.6.0/debian/postinst
+statsd-0.6.0/debian/rules
+statsd-0.6.0/debian/scripts/
+statsd-0.6.0/debian/scripts/start
+statsd-0.6.0/debian/statsd.init
+statsd-0.6.0/debian/statsd.install
+statsd-0.6.0/debian/statsd.upstart
+statsd-0.6.0/docs/
+statsd-0.6.0/docs/admin_interface.md
+statsd-0.6.0/docs/backend.md
+statsd-0.6.0/docs/backend_interface.md
+statsd-0.6.0/docs/graphite.md
+statsd-0.6.0/docs/metric_types.md
+statsd-0.6.0/docs/namespacing.md
+statsd-0.6.0/exampleConfig.js
+statsd-0.6.0/examples/
+statsd-0.6.0/examples/Etsy/
+statsd-0.6.0/examples/Etsy/StatsD.pm
+statsd-0.6.0/examples/README.md
+statsd-0.6.0/examples/StatsD.scala
+statsd-0.6.0/examples/StatsdClient.java
+statsd-0.6.0/examples/csharp_example.cs
+statsd-0.6.0/examples/perl-example.pl
+statsd-0.6.0/examples/php-example.php
+statsd-0.6.0/examples/python_example.py
+statsd-0.6.0/examples/ruby_example.rb
+statsd-0.6.0/examples/ruby_example2.rb
+statsd-0.6.0/examples/statsd-client.sh
+statsd-0.6.0/examples/statsd.erl
+statsd-0.6.0/examples/statsd.go
+statsd-0.6.0/lib/
+statsd-0.6.0/lib/config.js
+statsd-0.6.0/lib/logger.js
+statsd-0.6.0/lib/process_metrics.js
+statsd-0.6.0/lib/set.js
+statsd-0.6.0/package.json
+statsd-0.6.0/run_tests.sh
+statsd-0.6.0/stats.js
+statsd-0.6.0/test/
+statsd-0.6.0/test/graphite_delete_counters_tests.js
+statsd-0.6.0/test/graphite_legacy_tests.js
+statsd-0.6.0/test/graphite_legacy_tests_statsprefix.js
+statsd-0.6.0/test/graphite_tests.js
+statsd-0.6.0/test/graphite_tests_statsprefix.js
+statsd-0.6.0/test/process_metrics_tests.js
+statsd-0.6.0/test/set_tests.js
+statsd-0.6.0/utils/
+statsd-0.6.0/utils/check_statsd.pl
+statsd-0.6.0/utils/statsd-timer-metric-counts.sh
+ ---> 57ae440929b5
+Step 7 : RUN npm install -g forever
+ ---> Running in 2b73032819d2
+npm http GET https://registry.npmjs.org/forever
+npm http 200 https://registry.npmjs.org/forever
+npm http GET https://registry.npmjs.org/forever/-/forever-0.10.8.tgz
+npm http 200 https://registry.npmjs.org/forever/-/forever-0.10.8.tgz
+npm http GET https://registry.npmjs.org/colors/0.6.0-1
+npm http GET https://registry.npmjs.org/cliff/0.1.8
+npm http GET https://registry.npmjs.org/flatiron/0.3.5
+npm http GET https://registry.npmjs.org/forever-monitor/1.2.2
+npm http GET https://registry.npmjs.org/nconf/0.6.7
+npm http GET https://registry.npmjs.org/nssocket
+npm http GET https://registry.npmjs.org/optimist/0.4.0
+npm http GET https://registry.npmjs.org/pkginfo/0.3.0
+npm http GET https://registry.npmjs.org/timespan/2.0.1
+npm http GET https://registry.npmjs.org/watch/0.7.0
+npm http GET https://registry.npmjs.org/utile/0.1.7
+npm http GET https://registry.npmjs.org/winston/0.7.1
+npm http 200 https://registry.npmjs.org/colors/0.6.0-1
+npm http GET https://registry.npmjs.org/colors/-/colors-0.6.0-1.tgz
+npm http 200 https://registry.npmjs.org/cliff/0.1.8
+npm http GET https://registry.npmjs.org/cliff/-/cliff-0.1.8.tgz
+npm http 200 https://registry.npmjs.org/nconf/0.6.7
+npm http GET https://registry.npmjs.org/nconf/-/nconf-0.6.7.tgz
+npm http 200 https://registry.npmjs.org/flatiron/0.3.5
+npm http GET https://registry.npmjs.org/flatiron/-/flatiron-0.3.5.tgz
+npm http 200 https://registry.npmjs.org/forever-monitor/1.2.2
+npm http GET https://registry.npmjs.org/forever-monitor/-/forever-monitor-1.2.2.tgz
+npm http 200 https://registry.npmjs.org/timespan/2.0.1
+npm http 200 https://registry.npmjs.org/nssocket
+npm http GET https://registry.npmjs.org/nssocket/-/nssocket-0.5.1.tgz
+npm http GET https://registry.npmjs.org/timespan/-/timespan-2.0.1.tgz
+npm http 200 https://registry.npmjs.org/optimist/0.4.0
+npm http 200 https://registry.npmjs.org/pkginfo/0.3.0
+npm http GET https://registry.npmjs.org/optimist/-/optimist-0.4.0.tgz
+npm http GET https://registry.npmjs.org/pkginfo/-/pkginfo-0.3.0.tgz
+npm http 200 https://registry.npmjs.org/watch/0.7.0
+npm http GET https://registry.npmjs.org/watch/-/watch-0.7.0.tgz
+npm http 200 https://registry.npmjs.org/utile/0.1.7
+npm http GET https://registry.npmjs.org/utile/-/utile-0.1.7.tgz
+npm http 200 https://registry.npmjs.org/winston/0.7.1
+npm http GET https://registry.npmjs.org/winston/-/winston-0.7.1.tgz
+npm http 200 https://registry.npmjs.org/colors/-/colors-0.6.0-1.tgz
+npm http 200 https://registry.npmjs.org/cliff/-/cliff-0.1.8.tgz
+npm http 200 https://registry.npmjs.org/nssocket/-/nssocket-0.5.1.tgz
+npm http 200 https://registry.npmjs.org/nconf/-/nconf-0.6.7.tgz
+npm http 200 https://registry.npmjs.org/flatiron/-/flatiron-0.3.5.tgz
+npm http 200 https://registry.npmjs.org/forever-monitor/-/forever-monitor-1.2.2.tgz
+npm http 200 https://registry.npmjs.org/timespan/-/timespan-2.0.1.tgz
+npm http 200 https://registry.npmjs.org/watch/-/watch-0.7.0.tgz
+npm http 200 https://registry.npmjs.org/pkginfo/-/pkginfo-0.3.0.tgz
+npm http 200 https://registry.npmjs.org/optimist/-/optimist-0.4.0.tgz
+npm http 200 https://registry.npmjs.org/winston/-/winston-0.7.1.tgz
+npm http 200 https://registry.npmjs.org/utile/-/utile-0.1.7.tgz
+npm http GET https://registry.npmjs.org/eventemitter2
+npm http GET https://registry.npmjs.org/lazy
+npm http GET https://registry.npmjs.org/async
+npm http GET https://registry.npmjs.org/deep-equal
+npm http GET https://registry.npmjs.org/wordwrap
+npm http GET https://registry.npmjs.org/broadway
+npm http GET https://registry.npmjs.org/minimatch
+npm http GET https://registry.npmjs.org/broadway/0.2.7
+npm http GET https://registry.npmjs.org/optimist/0.3.5
+npm http GET https://registry.npmjs.org/eyes
+npm http GET https://registry.npmjs.org/winston
+npm http GET https://registry.npmjs.org/async
+npm http GET https://registry.npmjs.org/cycle
+npm http GET https://registry.npmjs.org/ini
+npm http GET https://registry.npmjs.org/i
+npm http GET https://registry.npmjs.org/ps-tree
+npm http GET https://registry.npmjs.org/prompt/0.2.9
+npm http GET https://registry.npmjs.org/optimist
+npm http GET https://registry.npmjs.org/mkdirp
+npm http GET https://registry.npmjs.org/watch
+npm http GET https://registry.npmjs.org/director/1.1.10
+npm http GET https://registry.npmjs.org/request
+npm http GET https://registry.npmjs.org/pkginfo
+npm http GET https://registry.npmjs.org/ncp
+npm http GET https://registry.npmjs.org/stack-trace
+npm http GET https://registry.npmjs.org/rimraf
+npm http 200 https://registry.npmjs.org/lazy
+npm http GET https://registry.npmjs.org/lazy/-/lazy-1.0.11.tgz
+npm http 200 https://registry.npmjs.org/deep-equal
+npm http GET https://registry.npmjs.org/deep-equal/-/deep-equal-0.0.0.tgz
+npm http 200 https://registry.npmjs.org/wordwrap
+npm http GET https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.2.tgz
+npm http 200 https://registry.npmjs.org/broadway/0.2.7
+npm http GET https://registry.npmjs.org/broadway/-/broadway-0.2.7.tgz
+npm http 200 https://registry.npmjs.org/eventemitter2
+npm http GET https://registry.npmjs.org/eventemitter2/-/eventemitter2-0.4.12.tgz
+npm http 200 https://registry.npmjs.org/broadway
+npm http 200 https://registry.npmjs.org/optimist/0.3.5
+npm http GET https://registry.npmjs.org/optimist/-/optimist-0.3.5.tgz
+npm http 200 https://registry.npmjs.org/eyes
+npm http GET https://registry.npmjs.org/eyes/-/eyes-0.1.8.tgz
+npm http 200 https://registry.npmjs.org/minimatch
+npm http GET https://registry.npmjs.org/minimatch/-/minimatch-0.0.5.tgz
+npm http 200 https://registry.npmjs.org/cycle
+npm http 200 https://registry.npmjs.org/lazy/-/lazy-1.0.11.tgz
+npm http GET https://registry.npmjs.org/cycle/-/cycle-1.0.2.tgz
+npm http 200 https://registry.npmjs.org/deep-equal/-/deep-equal-0.0.0.tgz
+npm http 200 https://registry.npmjs.org/ini
+npm http GET https://registry.npmjs.org/ini/-/ini-1.1.0.tgz
+npm http 200 https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.2.tgz
+npm http 200 https://registry.npmjs.org/optimist/-/optimist-0.3.5.tgz
+npm http 200 https://registry.npmjs.org/i
+npm http GET https://registry.npmjs.org/i/-/i-0.3.1.tgz
+npm http 200 https://registry.npmjs.org/eventemitter2/-/eventemitter2-0.4.12.tgz
+npm http 200 https://registry.npmjs.org/broadway/-/broadway-0.2.7.tgz
+npm http 200 https://registry.npmjs.org/eyes/-/eyes-0.1.8.tgz
+npm http 200 https://registry.npmjs.org/ps-tree
+npm http GET https://registry.npmjs.org/ps-tree/-/ps-tree-0.0.3.tgz
+npm http 200 https://registry.npmjs.org/minimatch/-/minimatch-0.0.5.tgz
+npm http 200 https://registry.npmjs.org/cycle/-/cycle-1.0.2.tgz
+npm http 200 https://registry.npmjs.org/winston
+npm http GET https://registry.npmjs.org/winston/-/winston-0.6.2.tgz
+npm http 200 https://registry.npmjs.org/prompt/0.2.9
+npm http GET https://registry.npmjs.org/prompt/-/prompt-0.2.9.tgz
+npm http 200 https://registry.npmjs.org/ps-tree/-/ps-tree-0.0.3.tgz
+npm http 200 https://registry.npmjs.org/i/-/i-0.3.1.tgz
+npm http 200 https://registry.npmjs.org/ini/-/ini-1.1.0.tgz
+npm http 200 https://registry.npmjs.org/mkdirp
+npm http 200 https://registry.npmjs.org/async
+npm http 200 https://registry.npmjs.org/optimist
+npm http GET https://registry.npmjs.org/mkdirp/-/mkdirp-0.3.5.tgz
+npm http GET https://registry.npmjs.org/async/-/async-0.1.22.tgz
+npm http GET https://registry.npmjs.org/optimist/-/optimist-0.3.7.tgz
+npm http 200 https://registry.npmjs.org/watch
+npm http GET https://registry.npmjs.org/watch/-/watch-0.5.1.tgz
+npm http 200 https://registry.npmjs.org/pkginfo
+npm http 200 https://registry.npmjs.org/director/1.1.10
+npm http 200 https://registry.npmjs.org/async
+npm http GET https://registry.npmjs.org/pkginfo/-/pkginfo-0.2.3.tgz
+npm http GET https://registry.npmjs.org/async/-/async-0.2.9.tgz
+npm http GET https://registry.npmjs.org/director/-/director-1.1.10.tgz
+npm http 200 https://registry.npmjs.org/ncp
+npm http 200 https://registry.npmjs.org/request
+npm http 200 https://registry.npmjs.org/prompt/-/prompt-0.2.9.tgz
+npm http 200 https://registry.npmjs.org/winston/-/winston-0.6.2.tgz
+npm http GET https://registry.npmjs.org/ncp/-/ncp-0.2.7.tgz
+npm http GET https://registry.npmjs.org/request/-/request-2.16.6.tgz
+npm http 200 https://registry.npmjs.org/rimraf
+npm http 200 https://registry.npmjs.org/stack-trace
+npm http GET https://registry.npmjs.org/rimraf/-/rimraf-1.0.9.tgz
+npm http GET https://registry.npmjs.org/stack-trace/-/stack-trace-0.0.7.tgz
+npm http 200 https://registry.npmjs.org/watch/-/watch-0.5.1.tgz
+npm http 200 https://registry.npmjs.org/pkginfo/-/pkginfo-0.2.3.tgz
+npm http 200 https://registry.npmjs.org/optimist/-/optimist-0.3.7.tgz
+npm http 200 https://registry.npmjs.org/async/-/async-0.1.22.tgz
+npm http 200 https://registry.npmjs.org/mkdirp/-/mkdirp-0.3.5.tgz
+npm http 200 https://registry.npmjs.org/async/-/async-0.2.9.tgz
+npm http 200 https://registry.npmjs.org/request/-/request-2.16.6.tgz
+npm http 200 https://registry.npmjs.org/ncp/-/ncp-0.2.7.tgz
+npm http 200 https://registry.npmjs.org/director/-/director-1.1.10.tgz
+npm http 200 https://registry.npmjs.org/rimraf/-/rimraf-1.0.9.tgz
+npm http 200 https://registry.npmjs.org/stack-trace/-/stack-trace-0.0.7.tgz
+npm http GET https://registry.npmjs.org/request/-/request-2.9.203.tgz
+npm http GET https://registry.npmjs.org/event-stream
+npm http GET https://registry.npmjs.org/lru-cache
+npm http GET https://registry.npmjs.org/eventemitter2/0.4.11
+npm http GET https://registry.npmjs.org/winston/0.6.2
+npm http GET https://registry.npmjs.org/read
+npm http GET https://registry.npmjs.org/revalidator
+npm http GET https://registry.npmjs.org/form-data
+npm http GET https://registry.npmjs.org/mime
+npm http GET https://registry.npmjs.org/hawk
+npm http 200 https://registry.npmjs.org/request/-/request-2.9.203.tgz
+npm http GET https://registry.npmjs.org/node-uuid
+npm http GET https://registry.npmjs.org/cookie-jar
+npm http GET https://registry.npmjs.org/aws-sign
+npm http GET https://registry.npmjs.org/oauth-sign
+npm http GET https://registry.npmjs.org/forever-agent
+npm http GET https://registry.npmjs.org/tunnel-agent
+npm http GET https://registry.npmjs.org/json-stringify-safe
+npm http GET https://registry.npmjs.org/qs
+npm http 200 https://registry.npmjs.org/eventemitter2/0.4.11
+npm http 200 https://registry.npmjs.org/winston/0.6.2
+npm http GET https://registry.npmjs.org/eventemitter2/-/eventemitter2-0.4.11.tgz
+npm http GET https://registry.npmjs.org/winston/-/winston-0.6.2.tgz
+npm http 200 https://registry.npmjs.org/lru-cache
+npm http GET https://registry.npmjs.org/lru-cache/-/lru-cache-1.0.6.tgz
+npm http 200 https://registry.npmjs.org/form-data
+npm http 200 https://registry.npmjs.org/revalidator
+npm http 200 https://registry.npmjs.org/mime
+npm http 200 https://registry.npmjs.org/read
+npm http GET https://registry.npmjs.org/form-data/-/form-data-0.0.10.tgz
+npm http GET https://registry.npmjs.org/revalidator/-/revalidator-0.1.5.tgz
+npm http GET https://registry.npmjs.org/mime/-/mime-1.2.10.tgz
+npm http GET https://registry.npmjs.org/read/-/read-1.0.5.tgz
+npm http 200 https://registry.npmjs.org/cookie-jar
+npm http 200 https://registry.npmjs.org/aws-sign
+npm http 200 https://registry.npmjs.org/node-uuid
+npm http GET https://registry.npmjs.org/cookie-jar/-/cookie-jar-0.2.0.tgz
+npm http GET https://registry.npmjs.org/aws-sign/-/aws-sign-0.2.0.tgz
+npm http GET https://registry.npmjs.org/node-uuid/-/node-uuid-1.4.0.tgz
+npm http 200 https://registry.npmjs.org/event-stream
+npm http GET https://registry.npmjs.org/event-stream/-/event-stream-0.5.3.tgz
+npm http 200 https://registry.npmjs.org/oauth-sign
+npm http 200 https://registry.npmjs.org/forever-agent
+npm http 200 https://registry.npmjs.org/tunnel-agent
+npm http GET https://registry.npmjs.org/oauth-sign/-/oauth-sign-0.2.0.tgz
+npm http GET https://registry.npmjs.org/tunnel-agent/-/tunnel-agent-0.2.0.tgz
+npm http GET https://registry.npmjs.org/forever-agent/-/forever-agent-0.2.0.tgz
+npm http 200 https://registry.npmjs.org/winston/-/winston-0.6.2.tgz
+npm http 200 https://registry.npmjs.org/eventemitter2/-/eventemitter2-0.4.11.tgz
+npm http 200 https://registry.npmjs.org/lru-cache/-/lru-cache-1.0.6.tgz
+npm http 200 https://registry.npmjs.org/json-stringify-safe
+npm http GET https://registry.npmjs.org/json-stringify-safe/-/json-stringify-safe-3.0.0.tgz
+npm http 200 https://registry.npmjs.org/form-data/-/form-data-0.0.10.tgz
+npm http 200 https://registry.npmjs.org/read/-/read-1.0.5.tgz
+npm http 200 https://registry.npmjs.org/mime/-/mime-1.2.10.tgz
+npm http 200 https://registry.npmjs.org/qs
+npm http GET https://registry.npmjs.org/qs/-/qs-0.5.6.tgz
+npm http 200 https://registry.npmjs.org/revalidator/-/revalidator-0.1.5.tgz
+npm http 200 https://registry.npmjs.org/oauth-sign/-/oauth-sign-0.2.0.tgz
+npm http 200 https://registry.npmjs.org/event-stream/-/event-stream-0.5.3.tgz
+npm http 200 https://registry.npmjs.org/node-uuid/-/node-uuid-1.4.0.tgz
+npm http 200 https://registry.npmjs.org/aws-sign/-/aws-sign-0.2.0.tgz
+npm http 200 https://registry.npmjs.org/cookie-jar/-/cookie-jar-0.2.0.tgz
+npm http 200 https://registry.npmjs.org/tunnel-agent/-/tunnel-agent-0.2.0.tgz
+npm WARN package.json aws-sign@0.2.0 No README.md file found!
+npm WARN package.json oauth-sign@0.2.0 No README.md file found!
+npm WARN package.json cookie-jar@0.2.0 No README.md file found!
+npm http 200 https://registry.npmjs.org/qs/-/qs-0.5.6.tgz
+npm http 200 https://registry.npmjs.org/forever-agent/-/forever-agent-0.2.0.tgz
+npm http 200 https://registry.npmjs.org/json-stringify-safe/-/json-stringify-safe-3.0.0.tgz
+npm http 200 https://registry.npmjs.org/hawk
+npm http GET https://registry.npmjs.org/hawk/-/hawk-0.10.2.tgz
+npm WARN package.json forever-agent@0.2.0 No README.md file found!
+npm WARN package.json tunnel-agent@0.2.0 No README.md file found!
+npm http 200 https://registry.npmjs.org/hawk/-/hawk-0.10.2.tgz
+npm http GET https://registry.npmjs.org/optimist/-/optimist-0.2.8.tgz
+npm http GET https://registry.npmjs.org/mute-stream
+npm http 200 https://registry.npmjs.org/optimist/-/optimist-0.2.8.tgz
+npm http 200 https://registry.npmjs.org/mute-stream
+npm http GET https://registry.npmjs.org/mute-stream/-/mute-stream-0.0.4.tgz
+npm http GET https://registry.npmjs.org/combined-stream
+npm http GET https://registry.npmjs.org/hoek
+npm http GET https://registry.npmjs.org/boom
+npm http GET https://registry.npmjs.org/cryptiles
+npm http GET https://registry.npmjs.org/sntp
+npm http 200 https://registry.npmjs.org/mute-stream/-/mute-stream-0.0.4.tgz
+npm http 200 https://registry.npmjs.org/cryptiles
+npm http GET https://registry.npmjs.org/cryptiles/-/cryptiles-0.1.3.tgz
+npm http 200 https://registry.npmjs.org/boom
+npm http 200 https://registry.npmjs.org/combined-stream
+npm http GET https://registry.npmjs.org/boom/-/boom-0.3.8.tgz
+npm http GET https://registry.npmjs.org/combined-stream/-/combined-stream-0.0.4.tgz
+npm http 200 https://registry.npmjs.org/sntp
+npm http GET https://registry.npmjs.org/sntp/-/sntp-0.1.4.tgz
+npm http 200 https://registry.npmjs.org/hoek
+npm http GET https://registry.npmjs.org/hoek/-/hoek-0.7.6.tgz
+npm http 200 https://registry.npmjs.org/cryptiles/-/cryptiles-0.1.3.tgz
+npm http 200 https://registry.npmjs.org/combined-stream/-/combined-stream-0.0.4.tgz
+npm http 200 https://registry.npmjs.org/boom/-/boom-0.3.8.tgz
+npm http 200 https://registry.npmjs.org/sntp/-/sntp-0.1.4.tgz
+npm http GET https://registry.npmjs.org/delayed-stream/0.0.5
+npm http 200 https://registry.npmjs.org/hoek/-/hoek-0.7.6.tgz
+npm http 200 https://registry.npmjs.org/delayed-stream/0.0.5
+npm http GET https://registry.npmjs.org/delayed-stream/-/delayed-stream-0.0.5.tgz
+npm http 200 https://registry.npmjs.org/delayed-stream/-/delayed-stream-0.0.5.tgz
+/usr/local/bin/forever -> /usr/local/lib/node_modules/forever/bin/forever
+/usr/local/bin/foreverd -> /usr/local/lib/node_modules/forever/bin/foreverd
+forever@0.10.8 /usr/local/lib/node_modules/forever
+├── colors@0.6.0-1
+├── watch@0.7.0
+├── timespan@2.0.1
+├── pkginfo@0.3.0
+├── optimist@0.4.0 (wordwrap@0.0.2)
+├── nssocket@0.5.1 (lazy@1.0.11, eventemitter2@0.4.12)
+├── utile@0.1.7 (deep-equal@0.0.0, rimraf@1.0.9, async@0.1.22, mkdirp@0.3.5, i@0.3.1, ncp@0.2.7)
+├── nconf@0.6.7 (ini@1.1.0, pkginfo@0.2.3, async@0.1.22, optimist@0.3.7)
+├── cliff@0.1.8 (eyes@0.1.8, winston@0.6.2)
+├── forever-monitor@1.2.2 (watch@0.5.1, minimatch@0.0.5, broadway@0.2.7, ps-tree@0.0.3)
+├── flatiron@0.3.5 (director@1.1.10, optimist@0.3.5, broadway@0.2.7, prompt@0.2.9)
+└── winston@0.7.1 (cycle@1.0.2, stack-trace@0.0.7, eyes@0.1.8, async@0.2.9, request@2.16.6)
+ ---> 130d64329d1b
+Step 8 : ADD config.js /data/config.js
+ ---> 6cd6a5e6eea8
+Step 9 : ADD Done.md /data/docker-statsd-README.md
+ ---> 587c1bbcd8e7
+Step 10 : RUN cat /data/config.js
+ ---> Running in 614d74f1b029
+/**
+ * Place this where you docker build / docker pull
+ * For example: see https://github.com/etsy/statsd/blob/master/exampleConfig.js
+ * It must be named config.js
+
+ * My first docker image. Enjoy!
+ * bosky101
+ */
+{"graphitePort": 2003, "graphiteHost": "localhost", "port": 8125}
+
+ ---> 6e81857e03c5
+Step 11 : RUN cat /data/docker-statsd-README.md
+ ---> Running in b0b87d744d19
+Assuming the image is tagged bosky101/docker-statsd
+eg: docker pull bosky101/docker-statsd
+OR
+eg: docker build -t bosky101/docker-statsd github.com/bosky101/docker-statsd
+
+To test the container, run:
+
+        docker run -i -t bosky101/docker-statsd node /statsd-0.6.0/stats.js /data/config.js
+
+To run statsd within the container in daemon mode, run:
+
+        docker run -d -t bosky101/docker-statsd forever start /statsd-0.6.0/stats.js /data/config.js
+ ---> 30e512a325e0
+Successfully built 30e512a325e0
+[] dev@~/$ docker run -i -t bosky101/docker-statsd node /statsd-0.6.0/stats.js /data/config.js
+8 Aug 06:50:00 - reading config file: /data/config.js
+8 Aug 06:50:00 - server is up
