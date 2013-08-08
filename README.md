@@ -29,6 +29,14 @@ To run statsd within the container in daemon mode
 
 	docker run -d -t bosky101/docker-statsd:latest forever start /statsd-0.6.0/stats.js /data/config.js
 	
+### Step3: Check if it's running
+
+	docker images # should show the docker-stats image
+	docker ps # should show the image with PORTS XYZ->8125/udp
+	
+	#test
+	
+
 Your statsd instance is now available
 
 ## To use as a base within your own docker image
