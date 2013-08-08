@@ -5,8 +5,8 @@ eg: docker build -t bosky101/docker-statsd github.com/bosky101/docker-statsd
 
 To test the container, run:
 
-        docker run -i -t bosky101/docker-statsd node /statsd-0.6.0/stats.js /data/config.js
+        docker run -i -t bosky101/docker-statsd:latest node /statsd-0.6.0/stats.js /data/config.js
 
 To run statsd within the container in daemon mode, run:
 
-        docker run -d -t bosky101/docker-statsd forever start /statsd-0.6.0/stats.js /data/config.js
+        docker run -d -t bosky101/docker-statsd:latest forever start /statsd-0.6.0/stats.js /data/config.js
