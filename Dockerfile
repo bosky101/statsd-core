@@ -13,13 +13,7 @@ RUN tar -xvzf v0.6.0.tar.gz
 RUN npm install -g forever
 
 ADD config.js /data/config.js
+ADD Done.md /data/docker-statsd-README.md
 
 RUN cat /data/config.js
-
-run echo "interactive usage:" >&2
-run echo "docker run -p 8125 -i -t bosky101/docker-statsd:latest /statsd-0.6.0/stats.js /data/config.js" >&2
-run echo "" >&2
-run echo "daemon usage:" >&2
-run echo "docker run -p 8125 -d -t bosky101/docker-statsd:latest forever start /statsd-0.6.0/stats.js /data/config.js"  >&2
-
-
+RUN cat /data/docker-statsd-README.md
