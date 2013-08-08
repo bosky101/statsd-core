@@ -1,24 +1,25 @@
 # docker-statsd
 
-## Setup
+There are three ways of getting up the image. Once setup they statsd can be run.
 
-Create a config.js file locally ( see the .js file in this repo as an example )
+## Step1: Pull the image
 
-## Pull the image
-
-### From the Docker index
+### From the Docker index ( cannot configure ports )
 	
 	docker pull bosky101/docker-statsd
 
-### From github
+### From github ( cannot configure ports )
 
 	docker build github.com/bosky101/docker-statsd
 
-## Run statsd
+### From Dockerfile (can configure ports,etc )
 
-Sets up a container with statsd installed listening on port 8125. 
+	git clone github.com/bosky101/docker-statsd
+	cd docker-statsd
+	cat config.js #edit this file as you wish, but keep the filename intact
+	docker build .
 
-The port, graphiteHost, graphitePort are configurable.
+## Step2: Run statsd
 
 To test the container, run as follows
 
@@ -35,16 +36,8 @@ Your statsd instance is now available
 First pull the image, then use it as a base.
 
 	docker build github.com/bosky101/docker-statsd
-
-Verify that the image exists
-
-	docker images
-
-Place it as a base within your dockfile
-
-	FROM bosky101/docker-statsd	
-	
-
+	docker images # verify that image exists
+	FROM bosky101/docker-statsd #place it as a base within your dockfile
 
 ## Author
 
