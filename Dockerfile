@@ -4,7 +4,6 @@ MAINTAINER Bhasker Kode "bosky101@gmail.com"
 
 RUN mkdir /data /var/run/sshd
 
-# get git
 RUN apt-get install -q -y wget libssl-dev
 
 RUN wget https://github.com/etsy/statsd/archive/v0.6.0.tar.gz --no-check-certificate
