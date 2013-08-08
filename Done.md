@@ -13,8 +13,7 @@ To run statsd within the container in daemon mode, run:
 
 	docker run -d bosky101/statsd:latest
 	OR
-        docker run -d -t bosky101/statsd-core:latest node /statsd-0.6.0/stats
-.js /data/config.js
+        docker run -d -t bosky101/statsd-core:latest node /statsd-0.6.0/stats.js /data/config.js
 
 	
 To run statsd on specific ports (8125 for UDP, 8126 for TCP admin. Defaults)
