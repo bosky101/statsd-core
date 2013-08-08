@@ -4,19 +4,17 @@ There are three ways of getting up the image. Once setup they statsd can be run.
 
 ## Step1: Pull the image
 
-### From the Docker index ( cannot configure ports )
+### From the Docker index
 	
 	docker pull bosky101/statsd-core  # easier to configure
 	OR
-	docker pull bosky101/statsd       # easier to run out of the box
+	docker pull bosky101/statsd       # pre-configured to localhost
 
-### From github ( cannot configure ports )
+### From github
 
 	docker build -t bosky101/statsd-core github.com/bosky101/statsd-core
-	OR
-	docker build -t bosky101/statsd-core github.com/bosky101/statsd
 
-### From Dockerfile (can configure ports,etc )
+### From Dockerfile
 
 	git clone github.com/bosky101/statsd-core
 	cd statsd-core

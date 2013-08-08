@@ -1,9 +1,9 @@
-Assuming the image is tagged bosky101/docker-statsd
+Assuming the image is tagged bosky101/statsd-core via one of the following:
 eg: docker pull bosky101/statsd-core (lets your start the daemon )
 OR
-eg: docker build -t bosky101/docker-statsd github.com/bosky101/docker-statsd
+eg: docker build -t bosky101/statsd-core github.com/bosky101/statsd-core
 OR 
-eg: docker pull bosky101/statsd ( starts daemon )
+eg: docker pull bosky101/statsd
 
 To test the container, run:
 
