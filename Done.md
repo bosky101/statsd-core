@@ -1,7 +1,9 @@
 Assuming the image is tagged bosky101/docker-statsd
-eg: docker pull bosky101/docker-statsd
+eg: docker pull bosky101/statsd-core (lets your start the daemon )
 OR
 eg: docker build -t bosky101/docker-statsd github.com/bosky101/docker-statsd
+OR 
+eg: docker pull bosky101/statsd ( starts daemon )
 
 To test the container, run:
 
@@ -11,10 +13,15 @@ To run statsd within the container in daemon mode, run:
 
         docker run -d -t bosky101/docker-statsd:latest node /statsd-0.6.0/stats
 .js /data/config.js
+	OR
+	docker run -d bosky101/statsd:latest
+
 	
 To run statsd on specific ports (8125 for UDP, 8126 for TCP admin. Defaults)
 
 	docker run -p 8125:8125/udp -p 8126:8126 -d  bosky101/docker-statsd:latest node /statsd-v0.6.0/stats.js /data/config.js
+	OR
+	docker run -p 8125:8125/udp -p 8126:8126 -d  bosky101/statsd:latest
 
 To test (assuming this was on stats.example.com)
 

@@ -6,16 +6,20 @@ There are three ways of getting up the image. Once setup they statsd can be run.
 
 ### From the Docker index ( cannot configure ports )
 	
-	docker pull bosky101/docker-statsd
+	docker pull bosky101/statsd-core  # easier to configure
+	OR
+	docker pull bosky101/statsd       # easier to run out of the box
 
 ### From github ( cannot configure ports )
 
-	docker build -t bosky101/docker-statsd github.com/bosky101/docker-statsd
+	docker build -t bosky101/statsd-core github.com/bosky101/statsd-core
+	OR
+	docker build -t bosky101/statsd-core github.com/bosky101/statsd
 
 ### From Dockerfile (can configure ports,etc )
 
-	git clone github.com/bosky101/docker-statsd
-	cd docker-statsd
+	git clone github.com/bosky101/statsd-core
+	cd statsd-core
 	cat config.js #edit this file as you wish, but keep the filename intact
 	docker build .
 
@@ -23,17 +27,21 @@ There are three ways of getting up the image. Once setup they statsd can be run.
 
 To test the container, run as follows
 
-	docker run -i -t bosky101/docker-statsd:latest node /statsd-0.6.0/stats.js /data/config.js
+	docker run -i -t bosky101/statsd-core:latest node /statsd-0.6.0/stats.js /data/config.js
 
 To run statsd within the container in daemon mode
 
-	docker run -d -t bosky101/docker-statsd:latest node /statsd-0.6.0/stats.js /data/config.js
+	docker run -d -t bosky101/statsd-core:latest node /statsd-0.6.0/stats.js /data/config.js
+
+To run statsd without much configuring is still easier by dropping "-core"
+
+	docker run -d bosky101/statsd
 
 Note: The image also comes with forever, but it has not been tested
 	
 ### Step3: Check if it's running
 
-	docker images # should show the docker-stats image
+	docker images # should show the statsd-core image
 	docker ps # should show the image with PORTS 8125/udp, 8126
 	
 	#test
@@ -46,9 +54,9 @@ Your statsd instance is now available
 
 First pull the image, then use it as a base.
 
-	docker build github.com/bosky101/docker-statsd
+	docker build github.com/bosky101/statsd-core
 	docker images # verify that image exists
-	FROM bosky101/docker-statsd #place it as a base within your dockfile
+	FROM bosky101/statsd-core #place it as a base within your dockfile
 
 ## Author
 
