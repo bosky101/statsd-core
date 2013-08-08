@@ -3,7 +3,6 @@ FROM shykes/nodejs:latest
 MAINTAINER Bhasker Kode "bosky101@gmail.com"
 
 RUN mkdir /data /var/run/sshd
-RUN cd /data
 
 # get git
 RUN apt-get install -q -y wget libssl-dev
@@ -13,7 +12,7 @@ RUN tar -xvzf v0.6.0.tar.gz
 
 RUN npm install -g forever
 
-ADD ./config.js /data/config.js
+ADD config.js /data/config.js
 
 RUN cat /data/config.js
 
